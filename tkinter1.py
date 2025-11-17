@@ -9,6 +9,7 @@ def hate_amerikans():
     button["text"] = f"Америкосов истреблено: {amerikans}"
 
 root = Tk()     # создаем корневой объект - окно
+ttk.Style().theme_use("classic")
 root.title("Приложение на Tkinter")     # устанавливаем заголовок окна
 root.geometry("400x300")    # устанавливаем размеры окна
 label = Label(text="Истребитель америкосов") # создаем текстовую метку
