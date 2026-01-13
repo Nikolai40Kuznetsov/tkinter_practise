@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-import pygame
+# import pygame
 
 window = tk.Tk()
 window.title("Плеер")
@@ -20,12 +20,12 @@ window.resizable(False, False)
 
 playlist_panel = None
 
-def play_music():
-    pygame.mixer.init()
-    pygame.mixer.music.load(r"")
-    pygame.mixer.music.play()
-    if pygame.mixer.music.get_busy():
-        pygame.mixer.music.stop()
+# def play_music():
+    # pygame.mixer.init()
+    # pygame.mixer.music.load(r"")
+    # pygame.mixer.music.play()
+    # if pygame.mixer.music.get_busy():
+        # pygame.mixer.music.stop()
 
 def create_round_button(parent, label, command=None):
     canvas = tk.Canvas(parent, width=64, height=64, bg="#20B2AA", highlightthickness=0)
@@ -77,7 +77,7 @@ def toggle_transparency_slider():
 settings_btn = create_round_button(window, "⚙", command=toggle_transparency_slider)
 settings_btn.place(relx=0.97, rely=0.02, anchor="ne")
 
-cover = tk.Label(window, text="Здесь могла быть ваша картинка", font=('Segoe UI', 14), bg="#7DF9FF", fg="white")
+cover = tk.Label(window, text="Картинка", font=('Segoe UI', 14), bg="#7DF9FF", fg="white")
 cover.pack(pady=(20, 5))
 
 author = tk.Label(window, text="Исполнитель", font=('Segoe UI', 14), bg="#7DF9FF", fg="white")
@@ -97,7 +97,7 @@ button_frame.pack(pady=10)
 
 btn_music = create_round_button(button_frame, "📁", toggle_playlist)
 btn_prev = create_round_button(button_frame, "⏮")
-btn_pause = create_round_button(button_frame, "⏸", command=play_music)
+btn_pause = create_round_button(button_frame, "⏸") #, command=play_music)
 btn_next = create_round_button(button_frame, "⏭")
 btn_pin = create_round_button(button_frame, "📌", lambda: window.attributes("-topmost", not window.attributes("-topmost")))
 
